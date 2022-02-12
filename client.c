@@ -1,5 +1,5 @@
 #include "minitalk.h"
-void	ft_send_binary_to_server(char *message, int pid)
+void	send_message(char *message, int pid)
 {
 	int		index;
 	int		shift;
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 	pid = ft_atoi(argv[1]);
 	if(argc == 3)
 	{
-    	ft_send_binary_to_server(message, pid);
+    	send_message(message, pid);
 	}
 	else
 	{
