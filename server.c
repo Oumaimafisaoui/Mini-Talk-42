@@ -1,6 +1,4 @@
 #include "minitalk.h"
-
-#include <stdio.h>
 static void     print_pid(void)
 {
     pid_t   pid;
@@ -29,19 +27,18 @@ void    message_handler(int signal)
     }
 }
 
-int main(void)
+int main()
 {
     struct sigaction	action;
-
 	action.sa_handler = &message_handler;
-	 print_pid();
-		while (1)
-		{
+    print_pid();
+	while (5)
+	{
 			sigaction(SIGUSR1, &action, NULL);
 			sigaction(SIGUSR2, &action, NULL);
 			pause();
-		}
-	
+	}
+	  
 	return (0);
 }
 
