@@ -14,8 +14,8 @@ void	send_message(char *message, int pid)
 				kill(pid, SIGUSR1);
 			else
 				kill(pid, SIGUSR2);
-			usleep(300);
 			shift++;
+			usleep(800);
 		}
 		index++;
 	}
